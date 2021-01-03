@@ -1,0 +1,30 @@
+package de.madjosz.adventofcode.y${year};
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import de.madjosz.adventofcode.AdventOfCodeUtil;
+import java.util.List;
+import org.junit.jupiter.api.Test;
+
+
+class Day${day}Test {
+
+    @Test
+    void day${day}() {
+        List<String> lines = AdventOfCodeUtil.readLines(${year}, ${dayInt});
+        Day${day} day${day} = new Day${day}(lines);
+
+        assertEquals(0, day${day}.a1());
+        assertEquals(0, day${day}.a2());
+    }
+
+    @Test
+    void day${day}_exampleinput() {
+        List<String> lines = AdventOfCodeUtil.readLines(${year}, ${dayInt}, "test");
+        Day${day} day${day} = new Day${day}(lines);
+
+        assertEquals(0, day${day}.a1());
+        assertEquals(0, day${day}.a2());
+    }
+
+}
