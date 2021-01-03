@@ -1,0 +1,44 @@
+# ignore inputs
+# https://www.reddit.com/r/adventofcode/comments/k99rod/comment/gf2ukkf/
+/src/main/resources/**/day[0-2][0-9]*.txt
+
+# IDEA
+.idea/
+out/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+bin/
+.settings/
+.classpath
+.project
+.polyglot.*
+
+# NetBeans
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Maven
+target/
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+# Gradle
+.gradle/
+gradlew
+gradlew.bat
+
+# OSX
+.DS_Store
