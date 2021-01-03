@@ -1,3 +1,4 @@
+# Maven
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -6,6 +7,19 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+.mvn/
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+# IDEA
+.idea/
+*.iml
+
+# Eclipse
+bin/
+.settings/
+.classpath
+.project
