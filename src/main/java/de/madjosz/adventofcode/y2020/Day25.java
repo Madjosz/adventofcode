@@ -42,7 +42,7 @@ public class Day25 {
     }
 
     public String a2() {
-        return "we are done";
+        return "50 stars";
     }
 
 }
