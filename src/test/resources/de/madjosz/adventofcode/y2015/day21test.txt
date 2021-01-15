@@ -1,0 +1,14 @@
+Hit Points: 12
+Damage: 7
+Armor: 2
+
+Weapons:    Cost  Damage  Armor
+Shortsword   10     5       0
+Longsword   200     6       0
+
+Armor:      Cost  Damage  Armor
+Bandedmail   75     0       4
+old Sack      5     0       1
+
+Rings:      Cost  Damage  Armor
+Defense +1   20     0       1

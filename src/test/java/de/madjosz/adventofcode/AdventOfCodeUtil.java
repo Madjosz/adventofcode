@@ -49,7 +49,7 @@ public final class AdventOfCodeUtil {
         Files.createDirectories(mainResourcesDir);
         Files.createDirectories(testResourcesDir);
 
-        for (int day = 3; day <= 25; ++day) {
+        for (int day = 1; day <= 25; ++day) {
             String dayStr = String.format("%02d", day);
             String sourcecode = classTemplate.replace("${year}", Integer.toString(year)).replace("${day}", dayStr);
             String testsourcecode = testclassTemplate.replace("${year}", Integer.toString(year))
@@ -64,7 +64,7 @@ public final class AdventOfCodeUtil {
     }
 
     public static void main(String[] args) throws IOException {
-        createAdventOfCodeStubs(2015);
+        createAdventOfCodeStubs(2016);
     }
 
 }

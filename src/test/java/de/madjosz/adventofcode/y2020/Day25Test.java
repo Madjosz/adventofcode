@@ -16,7 +16,7 @@ class Day25Test {
 
         assertEquals(15467093, day25.a1());
         assertEquals(15467093, day25.a1(1));
-        assertEquals("we are done", day25.a2());
+        assertEquals("50 stars", day25.a2());
     }
 
     @Test
@@ -26,6 +26,6 @@ class Day25Test {
 
         assertEquals(14897079, day25.a1());
         assertEquals(14897079, day25.a1(1));
-        assertEquals("we are done", day25.a2());
+        assertEquals("50 stars", day25.a2());
     }
 }
