@@ -1,5 +1,6 @@
 package de.madjosz.adventofcode.y2015;
 
+import de.madjosz.adventofcode.data.Coord;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -63,27 +64,5 @@ public class Day03 {
             visited.add(new Coord(current[index++ % 2]));
         }
         return visited.size();
-    }
-
-    private static class Coord {
-
-        private final int x;
-        private final int y;
-
-        public Coord(int[] c) {
-            this.x = c[0];
-            this.y = c[1];
-        }
-
-        @Override
-        public int hashCode() {
-            return 31 * x + y;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            return obj instanceof Coord other && this.x == other.x && this.y == other.y;
-        }
-
     }
 }

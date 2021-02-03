@@ -2,6 +2,7 @@ package de.madjosz.adventofcode.y2020;
 
 import static java.util.stream.Collectors.toList;
 
+import de.madjosz.adventofcode.data.Coord;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -21,17 +22,17 @@ public class Day24 {
         Coord move(Coord c) {
             switch (this) {
             case E:
-                return new Coord(c.row, c.col + 1);
+                return new Coord(c.x(), c.y() + 1);
             case W:
-                return new Coord(c.row, c.col - 1);
+                return new Coord(c.x(), c.y() - 1);
             case SE:
-                return new Coord(c.row - 1, c.col + 1);
+                return new Coord(c.x() - 1, c.y() + 1);
             case SW:
-                return new Coord(c.row - 1, c.col);
+                return new Coord(c.x() - 1, c.y());
             case NE:
-                return new Coord(c.row + 1, c.col);
+                return new Coord(c.x() + 1, c.y());
             case NW:
-                return new Coord(c.row + 1, c.col - 1);
+                return new Coord(c.x() + 1, c.y() - 1);
             default:
                 throw new IllegalStateException();
             }
@@ -70,28 +71,6 @@ public class Day24 {
 
     private static void toggleTile(Set<Coord> blackTiles, Coord tile) {
         if (!blackTiles.add(tile)) blackTiles.remove(tile);
-    }
-
-    private static class Coord {
-
-        private final int row;
-        private final int col;
-
-        public Coord(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
-
-        @Override
-        public int hashCode() {
-            return 31 * row + col;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            return obj instanceof Coord other && this.row == other.row && this.col == other.col;
-        }
-
     }
 
     public int a2() {

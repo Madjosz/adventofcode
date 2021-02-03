@@ -64,7 +64,7 @@ public final class AdventOfCodeUtil {
     }
 
     public static void main(String[] args) throws IOException {
-        createAdventOfCodeStubs(2016);
+        createAdventOfCodeStubs(2017);
     }
 
 }

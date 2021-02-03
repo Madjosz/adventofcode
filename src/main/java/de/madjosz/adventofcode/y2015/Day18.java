@@ -2,6 +2,7 @@ package de.madjosz.adventofcode.y2015;
 
 import static java.util.stream.Collectors.toCollection;
 
+import de.madjosz.adventofcode.data.Coord;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -85,7 +86,7 @@ public class Day18 {
         }
 
         private boolean inGrid(Coord c) {
-            return c.x >= 0 && c.x < width && c.y >= 0 && c.y < height;
+            return c.x() >= 0 && c.x() < width && c.y() >= 0 && c.y() < height;
         }
 
         protected Set<Coord> initialNextGen() {
@@ -115,31 +116,5 @@ public class Day18 {
                     new Coord(0, height - 1)));
             return nextGen;
         }
-    }
-
-    private static class Coord {
-
-        private final int x;
-        private final int y;
-
-        public Coord(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public Coord add(int[] dir) {
-            return new Coord(x + dir[0], y + dir[1]);
-        }
-
-        @Override
-        public int hashCode() {
-            return 31 * x + y;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            return obj instanceof Coord other && this.x == other.x && this.y == other.y;
-        }
-
     }
 }
