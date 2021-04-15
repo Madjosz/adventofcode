@@ -47,14 +47,10 @@ public class Day16 {
         return rules;
     }
 
-    private static class Closed {
+    private record Closed(int min, int max) {
 
-        private final int min;
-        private final int max;
-
-        public Closed(String min, String max) {
-            this.min = Integer.parseInt(min);
-            this.max = Integer.parseInt(max);
+        private Closed(String min, String max) {
+            this(Integer.parseInt(min), Integer.parseInt(max));
         }
 
         public boolean contains(int x) {

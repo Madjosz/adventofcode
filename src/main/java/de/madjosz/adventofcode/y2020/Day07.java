@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -61,37 +62,21 @@ public class Day07 {
         return rules.stream()
                 .map(s -> s.split(" bags contain "))
                 .collect(Collectors.toMap(s -> s[0],
-                        s -> bagContent.matcher(s[1])
-                                .results()
-                                .map(r -> new Bags(r.group(1), r.group(2)))
-                                .collect(toList())));
+                        s -> bagContent.matcher(s[1]).results().map(Bags::new).collect(toList())));
     }
 
     private static int getChildBags(Map<String, List<Bags>> bags, String color) {
         return bags.getOrDefault(color, emptyList())
                 .stream()
-                .mapToInt(b -> b.getCount() * getChildBags(bags, b.getColor()))
+                .mapToInt(b -> b.count() * getChildBags(bags, b.color()))
                 .sum() + 1;
     }
 
-    private static class Bags {
+    private record Bags(int count, String color) {
 
-        private final int count;
-        private final String color;
-
-        public Bags(String count, String color) {
-            this.count = Integer.parseInt(count);
-            this.color = color;
+        private Bags(MatchResult r) {
+            this(Integer.parseInt(r.group(1)), r.group(2));
         }
-
-        public int getCount() {
-            return count;
-        }
-
-        public String getColor() {
-            return color;
-        }
-
     }
 
 }
